@@ -4,6 +4,10 @@
 To test this project properly, the 
 following needs to be done
 
+Branches:
+Master - uses JDK17 and Spring 3
+JDK8 - uses JDK8 and Spring 2
+
 1) Create a run configuration for this application 
     ```Run | Edit Configurations```
 
