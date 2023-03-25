@@ -74,32 +74,32 @@ public class RetrieveEnvironmentProperties {
         StringBuilder retVal = new StringBuilder();
         String lastPropertySource = "";
         for (RetrieveEnvironmentPropertyItem retrieveEnvironmentPropertyItem : retrieveEnvironmentPropertyItems) {
-            if (!retrieveEnvironmentPropertyItem.propertySource().equals(lastPropertySource)) {
-                retVal.append("\n******* ").append(retrieveEnvironmentPropertyItem.propertySource()).append(" *******\n");
-                lastPropertySource = retrieveEnvironmentPropertyItem.propertySource();
+            if (!retrieveEnvironmentPropertyItem.getPropertySource().equals(lastPropertySource)) {
+                retVal.append("\n******* ").append(retrieveEnvironmentPropertyItem.getPropertySource()).append(" *******\n");
+                lastPropertySource = retrieveEnvironmentPropertyItem.getPropertySource();
             }
-            if (retrieveEnvironmentPropertyItem.propertyPreviousValue().equals("")) {
+            if (retrieveEnvironmentPropertyItem.getPropertyPreviousValue().equals("")) {
                 retVal.append("        New Property: ");
-                retVal.append(retrieveEnvironmentPropertyItem.propertyName());
+                retVal.append(retrieveEnvironmentPropertyItem.getPropertyName());
                 retVal.append(" = ");
-                retVal.append(retrieveEnvironmentPropertyItem.propertyCurrentValue());
+                retVal.append(retrieveEnvironmentPropertyItem.getPropertyCurrentValue());
                 retVal.append("\n");
             } else {
-                if (retrieveEnvironmentPropertyItem.propertyCurrentValue().equals(retrieveEnvironmentPropertyItem.propertyPreviousValue())) {
+                if (retrieveEnvironmentPropertyItem.getPropertyCurrentValue().equals(retrieveEnvironmentPropertyItem.getPropertyPreviousValue())) {
                     retVal.append("  Duplicate Property: ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyName());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyName());
                     retVal.append(" = ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyCurrentValue());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyCurrentValue());
                     retVal.append("\n");
                 } else {
                     retVal.append("   Override Property: ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyName());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyName());
                     retVal.append(" = ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyCurrentValue());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyCurrentValue());
                     retVal.append(" (Last Value = ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyPreviousValue());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyPreviousValue());
                     retVal.append("; Orig Value = ");
-                    retVal.append(retrieveEnvironmentPropertyItem.propertyOriginalValue());
+                    retVal.append(retrieveEnvironmentPropertyItem.getPropertyOriginalValue());
                     retVal.append(")\n");
                 }
             }
