@@ -1,11 +1,10 @@
 # Module: Retrieve Environment Variables
 
 
-To test this project properly, the 
-following needs to be done
+To test this project properly, the following needs to be done
 
 Branches:
-Master - uses JDK17 and Spring 3
+Master - uses JDK 21 and Spring 3
 JDK8 - uses JDK8 and Spring 2
 
 1) Create a run configuration for this application 
